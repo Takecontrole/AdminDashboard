@@ -20,7 +20,7 @@ const Dashboard = () => {
   return (
     <Box m="20px">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center" >
         <Header title="Панель управления" subtitle="Добро пожаловать в вашу панель управления" />
 
         <Box>
@@ -40,14 +40,29 @@ const Dashboard = () => {
       </Box>
 
       {/* GRID & CHARTS */}
-      <Box
-        display="grid"
+      <Box 
+        sx={{display: {
+          xs: "flex",
+          sm: "flex", 
+          md: "grid",
+          lg: "grid",
+          xl: "grid"
+        },
+         flexDirection: {
+           xs: "column",
+           sm: "column",
+           md: "row",
+           lg: "row",
+           xl: "row"
+         }
+        }}
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
         gap="20px"
       >
         {/* ROW 1 */}
-        <Box
+        <Box 
+          
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -74,8 +89,8 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Продажи"
+            title="31,225"
+            subtitle="Количество продаж"
             progress="0.50"
             increase="+21%"
             icon={
@@ -93,7 +108,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="741"
+            title="1,741"
             subtitle="Новые клиенты"
             progress="0.30"
             increase="+5%"
@@ -113,7 +128,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Полученный трафик"
+            subtitle="Посещений на сайте"
             progress="0.80"
             increase="+43%"
             icon={
@@ -143,14 +158,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Полученный доход
+                Полученный доход за месяц
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                ₽59,342.32
+                ₽1,790,342.32
               </Typography>
             </Box>
             <Box>
@@ -238,9 +253,9 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              ₽48,352 полученный доход
+              ₽290,342.32 полученный доход за день
             </Typography>
-            <Typography>Включает в себя дополнительные разные издержки и расходы</Typography>
+            <Typography>Включает в себя дополнительные издержки и расходы</Typography>
           </Box>
         </Box>
         <Box
@@ -252,7 +267,7 @@ const Dashboard = () => {
             variant="h5"
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
-          >Количечтво продаж
+          >Количечтво продаж за день
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -269,7 +284,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Трафик на основе географии
+            Откуда заходят пользователи
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />

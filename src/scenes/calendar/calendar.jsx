@@ -1,9 +1,11 @@
 import { useState } from "react";
 import FullCalendar, { formatDate } from "@fullcalendar/react";
+import esLocale from '@fullcalendar/core/locales/ru';
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
+
 import {
   Box,
   List,
@@ -48,7 +50,7 @@ const Calendar = () => {
 
   return (
     <Box m="20px">
-      <Header title="Календарь" subtitle="Full Calendar Interactive Page" />
+      <Header title="Календарь" subtitle="Интерактивная страница" />
 
       <Box display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
@@ -77,6 +79,7 @@ const Calendar = () => {
                         year: "numeric",
                         month: "short",
                         day: "numeric",
+                        
                       })}
                     </Typography>
                   }
@@ -88,8 +91,9 @@ const Calendar = () => {
 
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
-          <FullCalendar
+          <FullCalendar 
             height="75vh"
+            locale={'ru'}
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -100,7 +104,18 @@ const Calendar = () => {
               left: "prev,next today",
               center: "title",
               right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+              
             }}
+            buttonText={{
+  
+  today:    'сегодня',
+  month:    'месяц',
+  week:     'неделя',
+  day:      'день',
+  list:     'список'
+
+}}
+
             initialView="dayGridMonth"
             editable={true}
             selectable={true}
@@ -116,9 +131,19 @@ const Calendar = () => {
                 date: "2022-09-14",
               },
               {
-                id: "5123",
+                id: "51363723",
                 title: "Корпоратив",
                 date: "2022-09-28",
+              },
+              {
+                id: "5123",
+                title: "Взлом пентагона",
+                date: "2022-12-28",
+              },
+              {
+                id: "77777777777",
+                title: "Всероссийская амнистия",
+                date: "2023-03-31",
               },
             ]}
           />

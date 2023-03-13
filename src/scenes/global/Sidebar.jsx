@@ -1,4 +1,5 @@
 import { useState } from "react";
+import userlogo from "./user.png"
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ const Sidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
 
   return (
-    <Box
+    <Box 
       sx={{
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
@@ -94,10 +95,10 @@ const Sidebar = () => {
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
-                  alt="profile-user"
+                  alt="профиль"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.png`}
+                  src={userlogo}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -111,7 +112,7 @@ const Sidebar = () => {
                   Валентин Тарантино
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VIP фантазёр. админ в третьем поколении, сын Билла Гейца, хранитель паролей и защитник api сервера.
+                  VIP фантазёр. админ бурерождённый, сын Билла Гейца, хранитель паролей и защитник се₽вера.
                 </Typography>
               </Box>
             </Box>
@@ -170,6 +171,13 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="Создать товар"
+              to="/productform"
+              icon={<AddIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Календарь"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
@@ -183,35 +191,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Магазин
-            </Typography>
-            
-            <Item
-              title="Товары"
-              to="http://Takecontrole.github.io/Valentino/view-products"
-              icon={<InventoryIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Создать товар"
-              to="http://Takecontrole.github.io/Valentino/new-product"
-              icon={<AddIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Заказы"
-              to="http://Takecontrole.github.io/Valentino/view-orders"
-              icon={<InventoryIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+        
 
             <Typography
               variant="h6"

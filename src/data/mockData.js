@@ -77,7 +77,7 @@ export const mockDataTeam = [
 
 export const mockDataContacts = [
   {
-    id: 1,
+    id: 1, 
     name: "Jon Snow",
     email: "jonsnow@gmail.com",
     age: 35,
@@ -269,50 +269,50 @@ export const mockDataInvoices = [
 export const mockTransactions = [
   {
     txId: "01e4dsa",
-    user: "johndoe",
-    date: "2021-09-01",
-    cost: "1043.95",
+    user: "Олеся Понимасова",
+    date: "12:43",
+    cost: "1043",
   },
   {
     txId: "0315dsaa",
-    user: "jackdower",
-    date: "2022-04-01",
+    user: "Святой Александр",
+    date: "12:35",
     cost: "13300.45",
   },
   {
     txId: "01e4dsa",
-    user: "aberdohnny",
-    date: "2021-09-01",
+    user: "Арина Риваль",
+    date: "12:33",
     cost: "42.000",
   },
   {
     txId: "51034szv",
     user: "goodmanave",
-    date: "2022-11-05",
+    date: "12:30",
     cost: "200.000",
   },
   {
     txId: "0a123sb",
     user: "stevebower",
-    date: "2022-11-02",
+    date: "12:25",
     cost: "13.55",
   },
   {
     txId: "01e4dsa",
     user: "aberdohnny",
-    date: "2021-09-01",
+    date: "12:23",
     cost: "430.95",
   },
   {
     txId: "120s51a",
     user: "wootzifer",
-    date: "2019-04-15",
+    date: "12:19",
     cost: "2400.20",
   },
   {
     txId: "0315dsaa",
     user: "jackdower",
-    date: "2022-04-01",
+    date: "12:16",
     cost: "13300.45",
   },
 ];
