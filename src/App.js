@@ -22,11 +22,11 @@ function App() {
   const [isSidebar, setIsSidebar] = useState(true);
 
   return (
-    <HashRouter>
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
+  
           <Sidebar isSidebar={isSidebar} />
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
@@ -46,10 +46,10 @@ function App() {
               <Route path="/geography" element={<Geography />} />
             </Routes>
           </main>
+   
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
-    </HashRouter>
   );
 }
 
